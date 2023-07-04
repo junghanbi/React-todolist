@@ -1,9 +1,11 @@
 import React from 'react'
 import{
-  MdCheckBox,
-  MdCheckBoxOutlineBlank,
-  MdRemoveCircleOutline
-} from 'react-icons/md'
+  RiCheckboxCircleFill,
+  RiCheckboxBlankCircleLine,
+} from 'react-icons/ri'
+import{
+  GoTrash
+} from 'react-icons/go'
 import styled from 'styled-components'
 import cn from 'classnames'
 
@@ -16,11 +18,11 @@ const TodoListItem = ({todo,onRemove,onToggle}) => {
       className={cn('checkbox', {checked})}
       onClick={(() => onToggle(id))}
       >
-        {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+        {checked ? <RiCheckboxCircleFill /> : <RiCheckboxBlankCircleLine />}
         <div className='text'>{text}</div>
       </CheckBox>
       <Remove onClick={()=> onRemove(id)}>
-        <MdRemoveCircleOutline />
+        <GoTrash />
       </Remove>
     </TodoItemWrapper>
   )
@@ -29,13 +31,7 @@ const TodoListItem = ({todo,onRemove,onToggle}) => {
 const TodoItemWrapper = styled.div`
   display : flex;
   align-items : center;
-  padding : 1rem;
-  &:nth-child(even) {
-    background : #f8f6fa
-  };
-  & + & {
-    border-top : 1px solid #dee2e6;
-  }
+  padding : 1rem 2rem;
 `;
 
 const CheckBox = styled.div`
@@ -46,20 +42,20 @@ const CheckBox = styled.div`
   
   svg{
     font-size : 1.3rem;
-    color : #333;
+    color : #ccc;
   }
 
   .text{
     margin-left : 10px;
-    color : #333;
+    color : #666;
   }
 
   &.checked{
     svg{
-      color : #22b8cf;
+      color : yellowgreen;
     }
     .text{
-      color : #adb5bd;
+      color : #ccc;
       text-decoration: line-through;
     }
   }
@@ -69,7 +65,7 @@ const Remove = styled.div`
   display : flex;
   align-items : center;
   font-size : 1.3rem;
-  color : #ff6b6b;
+  color : #666;
   cursor :pointer;
   &:hover {
     color : #adb5bd;

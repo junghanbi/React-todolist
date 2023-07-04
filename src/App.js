@@ -9,17 +9,17 @@ function App() {
   const [todos,setTodos] = useState([
     {
       id : 1,
-      text : '할일1',
+      text : 'HTML Study',
       checked : true,
     },
     {
       id : 2,
-      text : '할일2',
+      text : 'CSS 정리',
       checked : true,
     },
     {
       id : 3,
-      text : '할일3',
+      text : 'React 복습',
       checked : false,
     },
   ])
